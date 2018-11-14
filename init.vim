@@ -46,12 +46,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'suan/vim-instant-markdown'
 Plug 'samuelsimoes/vim-jsx-utils'
 Plug 'othree/csscomplete.vim'
+Plug 'hail2u/vim-css3-syntax'
 Plug 'tpope/vim-surround'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'fholgado/minibufexpl.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
-
-"========== installation for Language server setuff ==============
+Plug 'kshenoy/vim-signature'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 "settings for autocompletion
 "let g:ale_completion_enabled = 1
@@ -224,3 +225,28 @@ let g:vim_jsx_pretty_colorful_config = 1
 
 "javascript libs syntax highlighting settings
 let g:used_javascript_libs = 'react'
+
+"Enable syntax highlighting for jsDocs
+let g:javascript_plugin_jsdoc = 1
+
+"Enable css autoComplete
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+"Enable auto-complete for html files
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+
+"setings for easymotions to provide jump locations acorss windows
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
